@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  # post 'orders/create'
-  # post '/orders', to: 'orders#create'
+
   get '/tweets', to: 'tweets#index'
+  post '/tweets', to: 'tweets#create'
+  
   get '/tweets/new', to: 'tweets#new', as: :new_tweet
   get '/tweets/:id', to: 'tweets#show', as: :tweet
 
