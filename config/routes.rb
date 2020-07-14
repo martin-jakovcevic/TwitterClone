@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # post 'orders/create'
   # post '/orders', to: 'orders#create'
   get '/tweets', to: 'tweets#index'
+  get '/tweets/new', to: 'tweets#new', as: :new_tweet
   get '/tweets/:id', to: 'tweets#show', as: :tweet
 
   root to: 'tweets#index'
