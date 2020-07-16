@@ -1,4 +1,4 @@
-<h1>New Tweet</h1>
+<h1>Edit Tweet</h1>
 
 <% if @tweet.errors.any? %>
 <div id="error_explanation">
@@ -26,11 +26,8 @@
   </p>
 
   <p>
-    <%= form.submit "Save Tweet" %>
+    <%= form.submit "Edit Tweet" %>
   </p>
 
   <%= link_to 'Back', root_path %>
 <% end %>
-
-
-
