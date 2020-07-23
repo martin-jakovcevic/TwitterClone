@@ -1,3 +1,39 @@
+<div class="container">
+  <div class="columns is-multiline">
+  <% @tweets.each do |tweet| %>
+    <div class="column is-4 is-offset-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Component
+          </P>
+          <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Test content for twitter clone.
+            <a href="#">@bulmaio</a>. <a href="#">#responsive</a>
+            <br>
+            <time datetime="2020-23-7">15:30 PM - 23 July 2020</time>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">Save</a>
+          <a href="#" class="card-footer-item">Edit</a>
+          <a href="#" class="card-footer-item">Delete</a>
+        </footer>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+
 <ul>
   <% @tweets.each do |tweet| %>
   <li>
