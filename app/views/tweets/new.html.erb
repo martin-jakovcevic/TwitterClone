@@ -1,5 +1,7 @@
-<h1>New Tweet</h1>
-
-<%= render 'form', tweet: @tweet, button_name: 'Save tweet' %>
+<%= render 'form',
+tweet: @tweet,
+button_name: 'Save tweet',
+cancel_path: root_path,
+heading: 'New Tweet' %>
 
 

@@ -1,3 +1,5 @@
-<h1>Edit Tweet</h1>
-
-<%= render 'form', tweet: @tweet, button_name: 'Update tweet' %>
+<%= render 'form',
+tweet: @tweet,
+button_name: 'Update tweet',
+cancel_path: tweet_path(@tweet),
+heading: 'Edit Tweet' %>
