@@ -1,34 +1,24 @@
-<%
-  if tweet.persisted?
-    cancel_path = tweet_path(tweet)
-  else
-    cancel_path = root_path
-  end
-%>
-
-
-<% if tweet.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-    <%= pluralize(tweet.errors.count, "error") %> prohibited this tweet to be created:
-    </h2>
-
-    <ul>
-      <% tweet.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <div class="container">
   <div class="columns is-multiline">
+  <% if tweet.errors.any? %>
     <div class="column is-4 is-offset-4">
+      <article class="message is-danger">
+        <div class="message-body">
+          <p><%= pluralize(tweet.errors.count, "error") %> prohibited this tweet to be created: </p>
+          <br>
+          <p>
+          <% tweet.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </p>
+        </div>
+      </article>
+
       <div class="content is-size-3">
         <h1><%= heading %></h1>
       </div>
     </div>
-
+  <% end %>
 
     <div class="column is-4 is-offset-4">
       <%= form_with model: tweet, local: true do |form| %>
@@ -36,8 +26,10 @@
           <%= form.label :title, class: "label" %>
           <div class="control">
             <%= form.text_field :title, class: "input", placeholder: "Title" %>
-
           </div>
+          <% if tweet.errors.any? %>
+            <p class="help is-danger">This Title is invalid</p>
+          <% end %>
         </div>
 
 
@@ -47,6 +39,9 @@
           <div class="control">
             <%= form.text_area :body, class: "textarea", placeholder: "body" %>
           </div>
+          <% if tweet.errors.any? %>
+            <p class="help is-danger">This body is invalid</p>
+          <% end %>
         </div>
 
 

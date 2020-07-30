@@ -2,25 +2,11 @@
   <div class="columns is-multiline">
     <div class="column is-4 is-offset-4">
       <div class="content-is-size-3">
-        <div class="card">
-          <header class="card-header">
-            <p class="card-header-title">
-              <%= @tweet.title %>
-            </P>
-          </header>
-          <div class="card-content">
-            <div class="content">
-              <%= @tweet.body %>
-            </div>
-          </div>
-          <footer class="card-footer">
-            <%= link_to "Back", root_path, class: "card-footer-item" %>
-            <%= link_to "Edit", edit_tweet_path(@tweet), class: "card-footer-item" %>
-            <%= link_to "Delete",tweet_path(@tweet),class: "card-footer-item", method: :delete, data: { confirm: "Are you sure you want to delete this tweet ? " } %>
-
-          </footer>
-        </div>
+        <h1><%= @tweet.title %></h1>
       </div>
+    </div>
+
+      <%= render @tweet, show: true %>
     </div>
   </div>
 </div>
